@@ -14,13 +14,13 @@ fetch("https://api.github.com/users")
 const updateDom = (data) => {
   
   data.forEach((user) => {
-    const {login, avatar_url, html_url } = user; 
+    // const {login, avatar_url, html_url } = user; 
     gitUser.innerHTML += `
-    <h3 class="text-dark my-3 ">Name : ${login}</h3>
+    <h3 class="text-dark my-3 ">Name : ${user.login}</h3>
 
-    <img class="rounded-5" src=${avatar_url} width="60%" />
+    <img class="rounded-5" src=${user.avatar_url} width="60%" />
 
-    <button class="my-3 bg-dark  rounded-3 text-white" ><a href="${html_url}" class="text-white text-decoration-none px-4" >link to github page </a> </button>
+    <button class="my-3 bg-dark  rounded-3 text-white" ><a href="${user.html_url}" class="text-white text-decoration-none px-4" >link to github page </a> </button>
 
     <br><br>
   `; 
